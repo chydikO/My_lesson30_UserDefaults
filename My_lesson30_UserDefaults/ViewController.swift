@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     @IBOutlet private weak var datePicker: UIDatePicker?
     @IBOutlet private weak var contentBottomConstraint: NSLayoutConstraint?
 
+    private var userModel: UserModel?
     //MARK: - override func
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,6 +93,9 @@ class ViewController: UIViewController {
         }
         
         UserDefaults.standard.set(datePicker?.date, forKey: Keys.DateKey)
+        
+        let userModel = UserModel(firstName: "Vasilyi", lastName: "Ivanoff", age: 35)
+        UserDefaults.standard.set(userModel, forKey: Keys.UserModelKey)
     }
     
     private func loadData() {
@@ -108,6 +112,14 @@ class ViewController: UIViewController {
         }
         let dateValue = UserDefaults.standard.object(forKey: Keys.DateKey) as? Date
         datePicker?.date = dateValue ?? Date()
+        
+        if let userModel =  UserDefaults.standard.object(forKey: Keys.UserModelKey) as? UserModel {
+            self.userModel = userModel
+            print("User = \(userModel.description)")
+        } else {
+            self.userModel = nil 
+            print("UserModel = nil")
+        }
     }
     
     private func clearData() {
@@ -115,6 +127,7 @@ class ViewController: UIViewController {
         UserDefaults.standard.removeObject(forKey: Keys.StringKey)
         UserDefaults.standard.removeObject(forKey: Keys.StringKeyTextField)
         UserDefaults.standard.removeObject(forKey: Keys.DateKey)
+        UserDefaults.standard.removeObject(forKey: Keys.UserModelKey)
 
         loadData() 
     }
