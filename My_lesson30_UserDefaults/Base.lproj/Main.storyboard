@@ -17,97 +17,113 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r7c-gv-Y1J">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                            </scrollView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="SB4-7u-nYv">
-                                <rect key="frame" x="30" y="138" width="354" height="488"/>
                                 <subviews>
-                                    <switch opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WV9-tY-f8f">
-                                        <rect key="frame" x="0.0" y="0.0" width="356" height="44"/>
-                                        <connections>
-                                            <action selector="switchControlChanged" destination="BYZ-38-t0r" eventType="valueChanged" id="7gk-NC-t9T"/>
-                                        </connections>
-                                    </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hs-Hq-scm">
-                                        <rect key="frame" x="0.0" y="74" width="354" height="44"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSl-77-vuP">
-                                        <rect key="frame" x="0.0" y="148" width="354" height="44"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="1uI-0f-VGw"/>
-                                        </connections>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaT-5O-T7X">
-                                        <rect key="frame" x="0.0" y="222" width="354" height="44"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucz-Ba-UO3">
-                                        <rect key="frame" x="0.0" y="296" width="354" height="44"/>
-                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="oaL-ea-Qew"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="Load Data">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="loadDataBattonClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="JdV-FL-KtJ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGv-Lm-eBp">
-                                        <rect key="frame" x="0.0" y="370" width="354" height="44"/>
-                                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="j7g-1v-Dr2"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="Save Data">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="saveDataBattonClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mae-oV-syx"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnX-2y-d7h">
-                                        <rect key="frame" x="0.0" y="444" width="354" height="44"/>
-                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="44" id="gM4-Es-64M"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                        <state key="normal" title="Clear Data">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clearDataBattonClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="l6Z-MA-12S"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="SB4-7u-nYv">
+                                        <rect key="frame" x="20" y="0.0" width="374" height="562"/>
+                                        <subviews>
+                                            <switch opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WV9-tY-f8f">
+                                                <rect key="frame" x="0.0" y="0.0" width="376" height="33.5"/>
+                                                <connections>
+                                                    <action selector="switchControlChanged" destination="BYZ-38-t0r" eventType="valueChanged" id="7gk-NC-t9T"/>
+                                                </connections>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hs-Hq-scm">
+                                                <rect key="frame" x="0.0" y="45.5" width="374" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pSl-77-vuP">
+                                                <rect key="frame" x="0.0" y="79.5" width="374" height="36.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="1uI-0f-VGw"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QaT-5O-T7X">
+                                                <rect key="frame" x="0.0" y="128" width="374" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ivZ-sL-Nmb">
+                                                <rect key="frame" x="0.0" y="162" width="374" height="232"/>
+                                                <connections>
+                                                    <action selector="datePickerChanged" destination="BYZ-38-t0r" eventType="valueChanged" id="J85-lu-PLq"/>
+                                                </connections>
+                                            </datePicker>
+                                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucz-Ba-UO3">
+                                                <rect key="frame" x="0.0" y="406" width="374" height="44"/>
+                                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="VZ7-p8-fD4"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="Load Data">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="loadDataBattonClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="JdV-FL-KtJ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SGv-Lm-eBp">
+                                                <rect key="frame" x="0.0" y="462" width="374" height="44"/>
+                                                <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="OUJ-9A-adk"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="Save Data">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="saveDataBattonClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mae-oV-syx"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JnX-2y-d7h">
+                                                <rect key="frame" x="0.0" y="518" width="374" height="44"/>
+                                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="hn7-pv-PNL"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="Clear Data">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clearDataBattonClicked" destination="BYZ-38-t0r" eventType="touchUpInside" id="l6Z-MA-12S"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
+                                <constraints>
+                                    <constraint firstItem="SB4-7u-nYv" firstAttribute="leading" secondItem="r7c-gv-Y1J" secondAttribute="leading" constant="20" id="705-jn-JLK"/>
+                                    <constraint firstAttribute="trailing" secondItem="SB4-7u-nYv" secondAttribute="trailing" constant="20" id="GKi-mx-K6W"/>
+                                    <constraint firstItem="SB4-7u-nYv" firstAttribute="centerX" secondItem="r7c-gv-Y1J" secondAttribute="centerX" id="KYt-Dq-rEV"/>
+                                    <constraint firstAttribute="bottom" secondItem="SB4-7u-nYv" secondAttribute="bottom" constant="20" id="O2C-t0-9qn"/>
+                                    <constraint firstItem="SB4-7u-nYv" firstAttribute="top" secondItem="r7c-gv-Y1J" secondAttribute="top" id="Whq-BZ-6Bv"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="SB4-7u-nYv" secondAttribute="bottom" constant="30" id="3Sc-1r-F1s"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r7c-gv-Y1J" secondAttribute="bottom" id="50V-eC-r8L"/>
-                            <constraint firstItem="SB4-7u-nYv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="Buf-MR-5Vf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SB4-7u-nYv" secondAttribute="trailing" constant="30" id="Ioq-5D-9kk"/>
                             <constraint firstItem="r7c-gv-Y1J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="J1m-LF-SPq"/>
-                            <constraint firstItem="SB4-7u-nYv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Neq-UE-uRp"/>
-                            <constraint firstItem="r7c-gv-Y1J" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="o2I-o1-GHk"/>
-                            <constraint firstItem="r7c-gv-Y1J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="oE8-Tq-EAW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r7c-gv-Y1J" secondAttribute="trailing" id="peh-rt-LSq"/>
+                            <constraint firstItem="r7c-gv-Y1J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="R6x-eq-qYX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r7c-gv-Y1J" secondAttribute="bottom" id="TyX-12-3zf"/>
+                            <constraint firstItem="r7c-gv-Y1J" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WWS-LA-Efg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="FfE-Jx-Wdc" appends="YES" id="OFe-7c-qPR"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="a47-2x-sBt"/>
                     <connections>
+                        <outlet property="contentBottomConstraint" destination="TyX-12-3zf" id="kKd-qA-dXJ"/>
+                        <outlet property="datePicker" destination="ivZ-sL-Nmb" id="DKM-qy-Frg"/>
                         <outlet property="switchControl" destination="WV9-tY-f8f" id="ete-VB-icp"/>
                         <outlet property="textField" destination="pSl-77-vuP" id="0Sl-Fi-V9O"/>
                         <outlet property="textLabel" destination="7Hs-Hq-scm" id="hJ2-9K-Anc"/>
@@ -115,6 +131,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="FfE-Jx-Wdc">
+                    <connections>
+                        <action selector="hideKeyBoard" destination="BYZ-38-t0r" id="dIF-TW-1oS"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="112.5"/>
         </scene>

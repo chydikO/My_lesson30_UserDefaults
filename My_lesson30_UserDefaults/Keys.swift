@@ -12,5 +12,5 @@ enum Keys {
     static let SwitchControlIsOnKey = "switchControlIsOn"
     static let StringKey = "StringKey"
     static let StringKeyTextField = "StringKeyTextField"
-
+    static let DateKey = "DateKey"
 }
