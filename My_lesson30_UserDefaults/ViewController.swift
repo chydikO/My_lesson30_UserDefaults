@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet private weak var textLabel: UILabel?
     @IBOutlet private weak var textLabelFromTF: UILabel?
     @IBOutlet private weak var textField: UITextField?
+    @IBOutlet private weak var userModeltextLabel: UILabel?
     @IBOutlet private weak var datePicker: UIDatePicker?
     @IBOutlet private weak var contentBottomConstraint: NSLayoutConstraint?
 
@@ -77,13 +78,16 @@ class ViewController: UIViewController {
     
     //MARK: - Private
     private func saveData() {
+        //save switchControl
         let value = switchControl?.isOn
         UserDefaults.standard.set(value, forKey: Keys.SwitchControlIsOnKey)
         
+        //save textString
         let textString = "TEST_String"
         UserDefaults.standard.set(textString, forKey: Keys.StringKey)
         textLabel?.text = textString
         
+        //save text from textField
         let textFieldText = textField?.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
         UserDefaults.standard.set( textFieldText, forKey: Keys.StringKeyTextField)
         if let text = textFieldText {
@@ -92,11 +96,29 @@ class ViewController: UIViewController {
             textLabelFromTF?.text = "-=TF.text text is Empty =-"
         }
         
+        //save date from datePicker
         UserDefaults.standard.set(datePicker?.date, forKey: Keys.DateKey)
         
+        //save custom Object
         let userModel = UserModel(firstName: "Vasilyi", lastName: "Ivanoff", age: 35)
-        UserDefaults.standard.set(userModel, forKey: Keys.UserModelKey)
+        self.userModel = userModel
+        
+//       1 if -> let
+//        if let userModel = userModel,
+//            let data = try? NSKeyedArchiver.archivedData(withRootObject: userModel, requiringSecureCoding: false) {
+//            UserDefaults.standard.set(data, forKey: Keys.UserModelKey)
+//        }
+
+        //2
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: userModel, requiringSecureCoding: false)
+            UserDefaults.standard.set(data, forKey: Keys.UserModelKey)
+        } catch {
+            print(error)
+        }
     }
+    
+   
     
     private func loadData() {
         let value = UserDefaults.standard.bool(forKey: Keys.SwitchControlIsOnKey)
@@ -110,16 +132,22 @@ class ViewController: UIViewController {
         } else {
            textLabelFromTF?.text = "-=TF.text text is Empty =-"
         }
+        
+        //load text from textField
         let dateValue = UserDefaults.standard.object(forKey: Keys.DateKey) as? Date
         datePicker?.date = dateValue ?? Date()
         
-        if let userModel =  UserDefaults.standard.object(forKey: Keys.UserModelKey) as? UserModel {
-            self.userModel = userModel
-            print("User = \(userModel.description)")
+        //load custom Object? UserModel.self -> это значит передвть клвсс
+        if let userModelRawData = UserDefaults.standard.object(forKey: Keys.UserModelKey) as? Data,
+            let uerModel = try? NSKeyedUnarchiver.unarchivedObject(ofClass: UserModel.self, from: userModelRawData) {
+            self.userModel = uerModel
+            print("UserModel -> \(uerModel)")
         } else {
-            self.userModel = nil 
-            print("UserModel = nil")
+            self.userModel = nil
+            print("UserModel -> nil")
         }
+        userModeltextLabel?.text = userModel?.description ?? "UserModel -> nil"
+
     }
     
     private func clearData() {

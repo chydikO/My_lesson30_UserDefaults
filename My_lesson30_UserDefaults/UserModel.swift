@@ -8,14 +8,16 @@
 
 import Foundation
 
-class UserModel: NSCoding {
-    
+class UserModel: NSObject, NSSecureCoding {
+    static var supportsSecureCoding: Bool {
+        return true
+    }
     
     let firstName: String
     let lastName: String
     let age: UInt
     
-    var description: String {
+    override var description: String {
         return "\(firstName) \(lastName), \(age)"
     }
     
@@ -32,12 +34,27 @@ class UserModel: NSCoding {
         self.age = age
     }
     
-    required init?(coder: NSCoder) {
-        return nil
+    // save
+    // Model -(encode)> Data -> Save to UserDefaults
+    
+    // load
+    // load from UserDefaults -> Data -(init(coder)> Model
+    required convenience init?(coder: NSCoder) {
+        guard
+            let firstName = coder.decodeObject(forKey: UserModel.Keys.firstNameKey) as? String,
+            let lastName = coder.decodeObject(forKey: UserModel.Keys.lastNameKey) as? String,
+            let age = coder.decodeObject(forKey: UserModel.Keys.ageKey) as? UInt
+            else {
+                return nil
+        }
+        self.init(firstName: firstName, lastName: lastName, age: age)
     }
     
     func encode(with coder: NSCoder) {
-        
+        coder.encode(firstName, forKey: UserModel.Keys.firstNameKey)
+        coder.encode(lastName, forKey: UserModel.Keys.lastNameKey)
+        coder.encode(age, forKey: UserModel.Keys.ageKey)
+
     }
     
     
